@@ -22,16 +22,21 @@ a { color: inherit; }
 .wrap {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 24px 20px 60px;
+  padding: 0 0 60px;
 }
 
-/* header */
+/* header & full-width banner */
 .site-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 20px;
+  padding: 40px 20px 30px;
+  background-image: url('../img/header-banner.jpg'); /* Replace with your desired header image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #ff0000; /* Optional horizontal red divider */
 }
 
 .site-header img.logo {
@@ -45,34 +50,27 @@ a { color: inherit; }
 .site-header h1 {
   font-size: 1.9rem;
   margin: 0 0 14px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.social-caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .social-row {
   display: flex;
   gap: 16px;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .social-row a img {
   width: 32px;
   height: 32px;
-}
-
-.social-caption {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin: 4px 0 22px;
-}
-
-.notice {
-  font-size: 0.95rem;
-  margin: 6px 0;
-}
-
-.notice.small {
-  font-size: 0.8rem;
-  color: var(--muted);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
 }
 
 /* category link list on home page */
@@ -292,7 +290,7 @@ footer.site-footer {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -260px; /* Hidden off-screen by default */
+  left: -260px;
   width: 250px;
   height: 100vh;
   z-index: 200;
@@ -304,12 +302,10 @@ footer.site-footer {
   box-shadow: 4px 0 15px rgba(0,0,0,0.5);
 }
 
-/* Toggle Class for JS or Hover */
 .sidebar.open, .sidebar:focus-within, .sidebar:hover {
   left: 0;
 }
 
-/* Floating Tab Button */
 .sidebar::after {
   content: "☰ Index";
   position: absolute;
